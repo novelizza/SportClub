@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Pages from '../pages';
-import {faRunning, faFileAlt, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faRunning, faWeight, faUser} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const NavStack = createBottomTabNavigator();
@@ -19,11 +19,11 @@ function StackNavBar() {
         }}
       />
       <NavStack.Screen
-        name="Cari Lirik"
+        name="Cek BMI"
         component={Pages.CostPages}
         options={{
           tabBarIcon: ({color}) => {
-            return <FontAwesomeIcon icon={faFileAlt} size={20} color={color} />;
+            return <FontAwesomeIcon icon={faWeight} size={20} color={color} />;
           },
         }}
       />

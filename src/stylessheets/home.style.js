@@ -5,8 +5,9 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    backgroundColor: '#f1c40f',
+    backgroundColor: '#1abc9c',
     borderBottomLeftRadius: 60,
+    borderBottomRightRadius: 60,
     alignItems: 'center',
     paddingBottom: 10,
   },
@@ -29,14 +30,14 @@ export default StyleSheet.create({
     maxHeight: 170,
   },
   itemListContainerGanjil: {
-    backgroundColor: '#1aa',
+    backgroundColor: '#2ecc71',
     marginVertical: 5,
     borderRadius: 5,
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    marginRight: 20,
-    marginLeft: 10,
+    marginRight: 10,
+    marginLeft: 25,
   },
   itemListContainerGenap: {
     backgroundColor: '#8e44ad',
@@ -61,7 +62,7 @@ export default StyleSheet.create({
     height: '80%',
   },
   itemListTXT: {
-    color: '#f1c40f',
+    color: '#2980b9',
     marginLeft: 10,
     fontWeight: 'bold',
     fontSize: 17,

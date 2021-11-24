@@ -72,11 +72,12 @@ function HomePages() {
           }}
           style={HomeStyle.headerImage}
         />
-        <Text style={HomeStyle.headerTXT}>Afifa Humaira - 21120119140141</Text>
+        <Text style={HomeStyle.headerTXT}>Adzra Fatikha - 21120119120032</Text>
+        <Text
+          style={[HomeStyle.judulTXT, {alignSelf: 'center', color: '#fff'}]}>
+          Data NFL, NBA, MLB, EPL, AFL
+        </Text>
       </View>
-      <Text style={[HomeStyle.judulTXT, {alignSelf: 'center'}]}>
-        Data NFL, NBA, MLB, EPL, AFL
-      </Text>
       <ScrollView>
         {data.map((item, i) => {
           return <ListItemNamaCity key={i} data={item} index={i} />;

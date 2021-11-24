@@ -4,9 +4,18 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
+  containerNormal: {
+    flex: 1,
+    backgroundColor: '#2ecc71',
+  },
+  containerNotNormal: {
+    flex: 1,
+    backgroundColor: '#e74c3c',
+  },
   headerContainer: {
-    backgroundColor: '#f1c40f',
+    backgroundColor: '#1abc9c',
     borderBottomLeftRadius: 60,
+    borderBottomRightRadius: 60,
     alignItems: 'center',
     paddingBottom: 10,
   },
@@ -19,7 +28,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   touchableContainer: {
-    backgroundColor: '#f1c40f',
+    backgroundColor: '#1abc9c',
     margin: 10,
     borderRadius: 5,
     alignItems: 'center',

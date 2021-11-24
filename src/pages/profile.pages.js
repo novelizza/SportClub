@@ -18,7 +18,7 @@ function ProfilePages() {
   React.useEffect(() => {
     async function fetchData() {
       await axios
-        .get('https://api.github.com/users/afifahumaira')
+        .get('https://api.github.com/users/Adzraftkha')
         .then(res => setData(res.data))
         .catch(e => Alert.alert('Gagal!', e));
     }
@@ -57,7 +57,7 @@ function ProfilePages() {
           onPress={() =>
             Linking.openURL('https://api.github.com/users/afifahumaira')
           }>
-          <Text style={ProfileStyle.touchableTXT}>Buka Github</Text>
+          <Text style={ProfileStyle.touchableTXT}>Lihat Saya di Github</Text>
         </TouchableOpacity>
       </View>
     </View>

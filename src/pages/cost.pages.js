@@ -19,25 +19,33 @@ function CostPages() {
   const navigation = useNavigation();
 
   const [data, setData] = React.useState({
-    artist: '',
-    title: '',
+    age: '',
+    weight: '',
+    height: '',
   });
 
   async function fetchData() {
-    if (data.artist !== '' && data.title !== '') {
+    if (data.age !== '' && data.weight !== '' && data.height !== '') {
       await axios
-        .get('https://api.lyrics.ovh/v1/' + data.artist + '/' + data.title)
+        .get('https://fitness-calculator.p.rapidapi.com/bmi', {
+          params: {age: data.age, weight: data.weight, height: data.height},
+          headers: {
+            'x-rapidapi-host': 'fitness-calculator.p.rapidapi.com',
+            'x-rapidapi-key':
+              '3a64e43cbbmsh3bb7347d31f0653p1abf3bjsn04469ed3e7e6',
+          },
+        })
         .then(res => {
-          console.log(res.data);
+          console.log(res.data.data);
           dispatch({
-            type: 'FILL_LIRIK',
-            inputValue: res.data.lyrics,
+            type: 'FILL_BMI',
+            inputValue: res.data.data,
           });
           navigation.navigate('CostDetailPage');
         })
         .catch(e => Alert.alert('Gagal!', e));
     } else {
-      Alert.alert('Warning!', 'Di isi dulu kolom artis dan judul');
+      Alert.alert('Warning!', 'Di isi dulu kolom diatas');
     }
   }
 
@@ -50,36 +58,54 @@ function CostPages() {
           }}
           style={CostStyle.headerImage}
         />
-        <Text style={CostStyle.headerTXT}>Afifa Humaira - 21120119140141</Text>
+        <Text style={CostStyle.headerTXT}>Adzra Fatikha - 21120119120032</Text>
+        <Text
+          style={[CostStyle.judulTXT, {alignSelf: 'center', color: '#fff'}]}>
+          Cek Seberapa Ideal Berat Badan Anda!
+        </Text>
       </View>
-      <Text style={CostStyle.judulTXT}>Artis :</Text>
+      <Text style={CostStyle.judulTXT}>Age :</Text>
       <TextInput
         style={CostStyle.textInput}
-        placeholder="Artist"
+        placeholder="Age"
         onChangeText={value =>
           setData({
             ...data,
-            ['artist']: value,
+            ['age']: value,
           })
         }
+        keyboardType="numeric"
       />
-      <Text style={CostStyle.judulTXT}>Judul :</Text>
+      <Text style={CostStyle.judulTXT}>Weight :</Text>
       <TextInput
         style={CostStyle.textInput}
-        placeholder="Judul"
+        placeholder="Weight"
         onChangeText={value =>
           setData({
             ...data,
-            ['title']: value,
+            ['weight']: value,
           })
         }
+        keyboardType="numeric"
+      />
+      <Text style={CostStyle.judulTXT}>Height :</Text>
+      <TextInput
+        style={CostStyle.textInput}
+        placeholder="Height"
+        onChangeText={value =>
+          setData({
+            ...data,
+            ['height']: value,
+          })
+        }
+        keyboardType="numeric"
       />
       <TouchableOpacity
         onPress={() => {
           fetchData();
         }}
         style={CostStyle.touchableContainer}>
-        <Text style={CostStyle.touchableTXT}>Cari Lirik</Text>
+        <Text style={CostStyle.touchableTXT}>Check!</Text>
       </TouchableOpacity>
     </View>
   );

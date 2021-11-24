@@ -5,8 +5,9 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    backgroundColor: '#aa1',
+    backgroundColor: '#1abc9c',
     borderBottomLeftRadius: 60,
+    borderBottomRightRadius: 60,
     alignItems: 'center',
     paddingBottom: 10,
   },

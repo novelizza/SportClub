@@ -10,7 +10,9 @@ function HomeDetailPages() {
   return (
     <View style={HomeStyle.container}>
       <View>
-        <Text style={HomeStyle.judulTXT}>Data Detail : </Text>
+        <Text style={[HomeStyle.judulTXT, {alignSelf: 'center'}]}>
+          Data Detail
+        </Text>
         <Text style={HomeStyle.itemListTXT}>
           {'Judul : ' + FutballReducer.data.title}
         </Text>

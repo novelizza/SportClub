@@ -14,12 +14,12 @@ const FutballReducer = (state = initialStateFutball, action) => {
   return state;
 };
 
-const initialStateLirik = {
+const initialStateBMI = {
   data: {},
 };
 
-const LirikReducer = (state = initialStateLirik, action) => {
-  if (action.type === 'FILL_LIRIK') {
+const BMIReducer = (state = initialStateBMI, action) => {
+  if (action.type === 'FILL_BMI') {
     return {
       ...state,
       ['data']: action.inputValue,
@@ -30,7 +30,7 @@ const LirikReducer = (state = initialStateLirik, action) => {
 
 const reducer = combineReducers({
   FutballReducer,
-  LirikReducer,
+  BMIReducer,
 });
 
 export default reducer;
